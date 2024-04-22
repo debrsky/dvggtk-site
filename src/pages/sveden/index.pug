@@ -1,0 +1,39 @@
+extends ../../pug/layout
+
+block content
+  -
+    const sections = [
+      {title: "Основные сведения", name: "common", data: [
+        "наименование",
+        "дата создания",
+        "учредитель",
+        "место нахождения",
+        "график работы",
+        "контакты",
+        "лицензия",
+        "аккредитация"
+      ]},
+      {title: "Структура и органы управления образовательной организацией", name: "struct"},
+      {title: "Документы", name: "document"},
+      {title: "Образование", name: "education"},
+      {title: "Образовательные стандарты и требования", name: "eduStandarts"},
+      {title: "Руководство", name: "administration"},
+      {title: "Педагогический состав", name: "employees"},
+      {title: "Материально-техническое обеспечение и оснащенность образовательного процесса. Доступная среда", name: "objects"},
+      {title: "Платные образовательные услуги", name: "paid_edu"},
+      {title: "Финансово-хозяйственная деятельность", name: "budget"},
+      {title: "Вакантные места для приема (перевода) обучающихся", name: "vacant"},
+      {title: "Стипендии и меры поддержки обучающихся", name: "grants"},
+      {title: "Международное сотрудничество", name: "inter"}
+    ];
+
+  ul
+    each val in sections
+      li
+        a(href=val.name + ".html")=val.title
+        br
+        if val.data
+          each item, idx in val.data
+            span=item
+            if (idx !== val.data.length - 1)
+              span=" • "

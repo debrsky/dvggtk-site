@@ -56,9 +56,29 @@
 
 :root {
 	font-family: PT Sans, sans-serif;
-	font-size: 14px;
+	font-size: 12pt;
+
+	box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+	box-sizing: inherit;
 }
 
 h1 {
 	font: 20px/1.2 PT Sans Caption, sans-serif;
+}
+
+.container {
+	max-width: 80ch;
+}
+
+.sveden__prop-value {
+	font-weight: bold;
+}
+
+.sveden__prop-name {
+	text-decoration: underline;
 }
